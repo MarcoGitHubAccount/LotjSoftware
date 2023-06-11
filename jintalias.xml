@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<AliasPackage>
+		<AliasGroup isActive="yes" isFolder="yes">
+			<name>Jump Intercept Aliases</name>
+			<script></script>
+			<command></command>
+			<packageName></packageName>
+			<regex></regex>
+			<Alias isActive="yes" isFolder="no">
+				<name>Jump Intercept Ship</name>
+				<script>jinttarget = matches[2]
+jinttargetpos1 = nil
+jinttargetpos2 = nil
+jinttargetdif = nil
+send("radar")
+tempTimer(5,[[send("radar")]])</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^jint (.*)$</regex>
+			</Alias>
+			<Alias isActive="yes" isFolder="no">
+				<name>Jump Intercept Clear</name>
+				<script>jinttarget = nil
+jinttargetpos1 = nil
+jinttargetpos2 = nil
+jinttargetdif = nil</script>
+				<command></command>
+				<packageName></packageName>
+				<regex>^jintclear$</regex>
+			</Alias>
+		</AliasGroup>
+	</AliasPackage>
+</MudletPackage>
