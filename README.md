@@ -1,7 +1,7 @@
 # LotjSoftware
 Import the files you wish and read below how to use them
 
-##Jump intercept (jint)
+## Jump intercept (jint)
 To use simply type 
 jint shipname
 this will attempt to calculate and jump you to an intercept
