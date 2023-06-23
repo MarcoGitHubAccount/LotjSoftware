@@ -28,6 +28,9 @@
     cecho("\n"..jinttargetdif[2]/jinttargetdif[1])
     cecho("\n"..jinttargetdif[3]/jinttargetdif[1])
     cecho("\n"..jinttargetdif[4]/jinttargetdif[1].."\n")
+    if gmcp.Room.Info.name == "[| Bridge Pit [-=-] Hammerhead-Class Cruiser |]" then
+      send("w")
+    end
     send("calc local "..tostring(jinttargetdif[2]/jinttargetdif[1]*20 + jinttargetpos2[2]).." "..tostring(jinttargetdif[3]/jinttargetdif[1]*20 + jinttargetpos2[3]).." "..tostring(jinttargetdif[4]/jinttargetdif[1]*20 + jinttargetpos2[4]))
   end
 end</script>
@@ -51,6 +54,9 @@ end</script>
 			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
 				<name>jinthyper</name>
 				<script>if jinttargetdif ~= nil then
+  if gmcp.Room.Info.name == "[| An A-100 Astrogation Computer [-=-] Hammerhead-Class Cruiser |]" then
+    send("e")
+  end
   send("hyper")
 end</script>
 				<triggerType>0</triggerType>
