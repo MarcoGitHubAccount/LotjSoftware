@@ -2,12 +2,14 @@
 Import the files you wish and read below how to use them  
   
 ## Jump intercept (jintalias.xml and JintTriggers.xml)  
-To use simply type  
+This calculates and jumps you to the location of where a ship will be  
+when you come out of hyperspace. Simply use it like so  
 jint shipname  
-this will attempt to calculate and jump you to an intercept  
-it is recommended you turn off any auto radars first  
-if you wish to cancel a jint simply tipe  
-jintclear  
+this will automatically do the work for you, works with all small ships  
+and with hammerhead cruisers. If anything goes wrong or you want to cancel  
+it simply type  
+jint  
+that will cancel jint and give you back full control  
   
 ## Encryptme (encryptme.xml)  
 Generates a unique encryption for the channel you input, this  
