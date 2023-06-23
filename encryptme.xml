@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<AliasPackage>
+		<Alias isActive="yes" isFolder="no">
+			<name>^encryptme (.*)$</name>
+			<script>local chan = getTime(true, "MM")..matches[2]..getTime(true, "dd")
+math.randomseed(tonumber(chan))
+for i=1,50 do
+  math.random()
+end
+cecho("\n&lt;white&gt;"..string.format("%03d",math.random()*1000).."\n")</script>
+			<command></command>
+			<packageName></packageName>
+			<regex>^encryptme (.*)$</regex>
+		</Alias>
+	</AliasPackage>
+</MudletPackage>
