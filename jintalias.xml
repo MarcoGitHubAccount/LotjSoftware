@@ -28,7 +28,7 @@ jinttargetpos2 = nil
 jinttargetdif = nil</script>
 				<command></command>
 				<packageName></packageName>
-				<regex>^jintclear$</regex>
+				<regex>^jint$</regex>
 			</Alias>
 		</AliasGroup>
 	</AliasPackage>
