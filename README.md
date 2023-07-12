@@ -1,7 +1,7 @@
 # LotjSoftware  
 Import the files you wish and read below how to use them  
   
-## Jump intercept (jintalias.xml and JintTriggers.xml)  
+## Jump intercept (jintalias.xml and JintTriggers.xml, DONT GET JintTriggers_specific.xml unless I say to, its a very specific fix not for everyone)  
 This calculates and jumps you to the location of where a ship will be  
 when you come out of hyperspace. Simply use it like so  
 jint shipname  
