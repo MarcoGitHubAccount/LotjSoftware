@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE MudletPackage>
+<MudletPackage version="1.001">
+	<TriggerPackage>
+		<TriggerGroup isActive="yes" isFolder="yes" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+			<name>Jump Intercept Triggers</name>
+			<script></script>
+			<triggerType>0</triggerType>
+			<conditonLineDelta>0</conditonLineDelta>
+			<mStayOpen>0</mStayOpen>
+			<mCommand></mCommand>
+			<packageName></packageName>
+			<mFgColor>#ff0000</mFgColor>
+			<mBgColor>#ffff00</mBgColor>
+			<mSoundFile></mSoundFile>
+			<colorTriggerFgColor>#000000</colorTriggerFgColor>
+			<colorTriggerBgColor>#000000</colorTriggerBgColor>
+			<regexCodeList />
+			<regexCodePropertyList />
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>jintget</name>
+				<script>if jinttarget ~= nil and matches[3] == jinttarget then
+  if jinttargetpos1 == nil then
+    jinttargetpos1 = {os.clock(),tonumber(matches[5]),tonumber(matches[6]),tonumber(matches[7])}
+  elseif jinttargetpos2 == nil then
+    jinttargetpos2 = {os.clock(),tonumber(matches[5]),tonumber(matches[6]),tonumber(matches[7])}
+    jinttargetdif = {jinttargetpos2[1]-jinttargetpos1[1],jinttargetpos2[2]-jinttargetpos1[2],jinttargetpos2[3]-jinttargetpos1[3],jinttargetpos2[4]-jinttargetpos1[4]}
+    --if jinttargetdif[1] &lt; 2 then
+    --  jinttargetpos1 = nil
+    --  jinttargetpos2 = nil
+    --  jinttargetdif = nil
+    --  tempTimer(5,[[send("radar")]])
+    --  tempTimer(10,[[send("radar")]])
+    --  return
+    --end
+    cecho("\n"..jinttargetdif[2]/jinttargetdif[1])
+    cecho("\n"..jinttargetdif[3]/jinttargetdif[1])
+    cecho("\n"..jinttargetdif[4]/jinttargetdif[1].."\n")
+    if gmcp.Room.Info.name == "[| Bridge Pit [-=-] Hammerhead-Class Cruiser |]" then
+      send("w")
+    elseif gmcp.Room.Info.name == "[Praetorian-Class Frigate --- The Piloting Station]" then
+      send("u")
+    end
+    send("calc local "..tostring(jinttargetdif[2]/jinttargetdif[1]*20/60 + jinttargetpos2[2]).." "..tostring(jinttargetdif[3]/jinttargetdif[1]*20/60 + jinttargetpos2[3]).." "..tostring(jinttargetdif[4]/jinttargetdif[1]*20/60 + jinttargetpos2[4]))
+    if gmcp.Room.Info.name == "[| An A-100 Astrogation Computer [-=-] Hammerhead-Class Cruiser |]" then
+      send("e")
+    elseif gmcp.Room.Info.name == "[Praetorian-Class Frigate --- Astronavigation Computer]" then
+      send("d")
+    end
+  end
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>^(.*) '(.*)'( +)([-0-9]+) ([-0-9]+) ([-0-9]+)$</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>jinthyper</name>
+				<script>if jinttargetdif ~= nil then
+  if gmcp.Room.Info.name == "[| An A-100 Astrogation Computer [-=-] Hammerhead-Class Cruiser |]" then
+    send("e")
+  elseif gmcp.Room.Info.name == "[Praetorian-Class Frigate --- Astronavigation Computer]" then
+    send("d")
+  end
+  send("hyper")
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>[Status]: Hyperspace calculations have been completed.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>Jintdone</name>
+				<script>if jinttargetdif ~= nil then 
+  --jinttarget = nil
+  jinttargetpos1 = nil
+  jinttargetpos2 = nil
+  jinttargetdif = nil
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>You push forward the hyperspeed lever.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>jintcourse</name>
+				<script>if jinttarget ~= nil then
+  --send("course "..jinttarget)
+  jinttarget = nil 
+end
+if huntfollowpirates == 1 then
+  tempTimer(2,[[jinttarget=nil]])
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>Hyperjump complete.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+			<Trigger isActive="yes" isFolder="no" isTempTrigger="no" isMultiline="no" isPerlSlashGOption="no" isColorizerTrigger="no" isFilterTrigger="no" isSoundTrigger="no" isColorTrigger="no" isColorTriggerFg="no" isColorTriggerBg="no">
+				<name>jintretry</name>
+				<script>if jinttarget ~= nil then
+  jinttargetpos1 = nil
+  jinttargetpos2 = nil
+  jinttargetdif = nil
+  tempTimer(2,[[send("radar")]])
+  tempTimer(7,[[send("radar")]])
+end</script>
+				<triggerType>0</triggerType>
+				<conditonLineDelta>0</conditonLineDelta>
+				<mStayOpen>0</mStayOpen>
+				<mCommand></mCommand>
+				<packageName></packageName>
+				<mFgColor>#ff0000</mFgColor>
+				<mBgColor>#ffff00</mBgColor>
+				<mSoundFile></mSoundFile>
+				<colorTriggerFgColor>#000000</colorTriggerFgColor>
+				<colorTriggerBgColor>#000000</colorTriggerBgColor>
+				<regexCodeList>
+					<string>You are too close to (.*) to make the jump to lightspeed!</string>
+					<string>[Alert]: Jump coordinates too close to stellar object. Jump not set.</string>
+					<string>Please wait until the ship has finished its current maneuver.</string>
+					<string>[ALERT]: Aborting Hyperspace calculation. Terminal reset.</string>
+				</regexCodeList>
+				<regexCodePropertyList>
+					<integer>1</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+					<integer>0</integer>
+				</regexCodePropertyList>
+			</Trigger>
+		</TriggerGroup>
+	</TriggerPackage>
+</MudletPackage>
